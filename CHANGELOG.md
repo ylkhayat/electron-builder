@@ -1,3 +1,20 @@
+# [27.0.0-alpha.6](https://github.com/electron-userland/electron-builder/compare/electron-builder@27.0.0-alpha.5...electron-builder@27.0.0-alpha.6) (2026-06-27)
+
+
+### Bug Fixes
+
+* **mac:** keep CFBundleName and helper app bundle names consistent ([#9962](https://github.com/electron-userland/electron-builder/issues/9962)) ([e5db1a0](https://github.com/electron-userland/electron-builder/commit/e5db1a0ba2674a1c5dc81fad9aeb107d57a245b1))
+* **nsis:** reliably install the main executable and native binaries on x64 and arm64 ([#9988](https://github.com/electron-userland/electron-builder/issues/9988)) ([50d2296](https://github.com/electron-userland/electron-builder/commit/50d2296e001e222723977b2ca8591a69d97d64f6))
+* ship `snapcraft` type declarations so `SnapOptions.d.ts` resolves for consumers ([#9971](https://github.com/electron-userland/electron-builder/issues/9971)) ([d853e19](https://github.com/electron-userland/electron-builder/commit/d853e193ff4c15ef7dec7596c771c7bff27081bf))
+
+
+### Features
+
+* **dmg:** default DMG `filesystem` to `APFS` (BREAKING) ([#9978](https://github.com/electron-userland/electron-builder/issues/9978)) ([c5806fe](https://github.com/electron-userland/electron-builder/commit/c5806fee5f4f2c4be66b50cbfaac4e6da4153db6))
+* **win:** add MSIX target (beta) ([#9808](https://github.com/electron-userland/electron-builder/issues/9808)) ([d94a099](https://github.com/electron-userland/electron-builder/commit/d94a0999a5a77636319be6ce115cea8e9394ee8d))
+
+
+
 # [27.0.0-alpha.5](https://github.com/electron-userland/electron-builder/compare/electron-builder@27.0.0-alpha.4...electron-builder@27.0.0-alpha.5) (2026-06-20)
 
 

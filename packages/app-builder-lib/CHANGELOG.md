@@ -1,5 +1,39 @@
 # app-builder-lib
 
+## 27.0.0-alpha.6
+
+### Major Changes
+
+- Feat(dmg): default DMG `filesystem` to APFS _[`#9978`](https://github.com/electron-userland/electron-builder/pull/9978) [`c5806fe`](https://github.com/electron-userland/electron-builder/commit/c5806fee5f4f2c4be66b50cbfaac4e6da4153db6) [@mmaietta](https://github.com/mmaietta)_
+
+  BREAKING CHANGE: The default DMG volume filesystem changed from `HFS+` to `APFS`. APFS is the modern macOS filesystem and produces smaller, faster-to-mount images on current macOS. If you must support pre-10.13 (High Sierra) macOS, which cannot mount APFS volumes, set `dmg.filesystem: "HFS+"` explicitly.
+
+- Fix(mac): keep `CFBundleName` and helper app bundle names consistent so Electron resolves helper apps on modern macOS _[`#9962`](https://github.com/electron-userland/electron-builder/pull/9962) [`e5db1a0`](https://github.com/electron-userland/electron-builder/commit/e5db1a0ba2674a1c5dc81fad9aeb107d57a245b1) [@mmaietta](https://github.com/mmaietta)_
+  - macOS product and executable names are no longer normalized to NFD. The `.app` bundle, the helper bundles, and `CFBundleName` now all use the product name exactly as configured, which is required for Electron's helper-app lookup (`${CFBundleName} Helper.app`).
+  - macOS builds now require `productName` and `executableName` to be usable as a bundle name without any filename sanitization. A name that would otherwise be silently altered (for example one containing `/`, `\`, `:`, `*`, control characters, or trailing dots/spaces) now fails with a clear configuration error so you can choose a valid name.
+
+### Minor Changes
+
+- Feat(win): add msix target with .msixbundle and .msixupload support, MSIX-specific manifest features (Package Integrity, Windows Services), and shared winAppUtil helper module _[`#9808`](https://github.com/electron-userland/electron-builder/pull/9808) [`d94a099`](https://github.com/electron-userland/electron-builder/commit/d94a0999a5a77636319be6ce115cea8e9394ee8d) [@mmaietta](https://github.com/mmaietta)_
+
+### Patch Changes
+
+- Fix(nsis): pack the app archive with a filter the install-time extractor can decode so the main executable and native binaries are reliably installed on x64 and arm64 (#9983) _[`#9988`](https://github.com/electron-userland/electron-builder/pull/9988) [`50d2296`](https://github.com/electron-userland/electron-builder/commit/50d2296e001e222723977b2ca8591a69d97d64f6) [@mmaietta](https://github.com/mmaietta)_
+- Fix: ship `snapcraft` type declarations so `SnapOptions.d.ts` resolves for consumers _[`#9971`](https://github.com/electron-userland/electron-builder/pull/9971) [`d853e19`](https://github.com/electron-userland/electron-builder/commit/d853e193ff4c15ef7dec7596c771c7bff27081bf) [@mmaietta](https://github.com/mmaietta)_
+
+<details><summary>Updated 2 dependencies</summary>
+
+<small>
+
+[`c5806fe`](https://github.com/electron-userland/electron-builder/commit/c5806fee5f4f2c4be66b50cbfaac4e6da4153db6)
+
+</small>
+
+- `dmg-builder@27.0.0-alpha.6`
+- `electron-builder-squirrel-windows@27.0.0-alpha.6`
+
+</details>
+
 ## 27.0.0-alpha.5
 
 ### Major Changes
